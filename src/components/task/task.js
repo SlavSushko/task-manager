@@ -16,7 +16,6 @@ export class Task extends BaseComponent {
     super.render();
     this.element.setAttribute('data-id', this.taskId);
 
-    // Безопасная разметка (без интерполяции пользовательского ввода)
     this.element.innerHTML = `
       <div class="task-card__body">
         <h3 class="task-card__title"></h3>
@@ -30,7 +29,6 @@ export class Task extends BaseComponent {
       </div>
     `;
 
-    // Защита от XSS: используем textContent вместо innerHTML для данных от пользователя
     this.element.querySelector('.task-card__title').textContent = this.title;
     this.element.querySelector('.task-card__desc').textContent = this.description || 'Без описания';
 
@@ -51,7 +49,7 @@ export class Task extends BaseComponent {
 
     deleteBtn.addEventListener('click', () => {
       if (this.onDelete) this.onDelete(this.taskId, this.title);
-      this.destroy(); // Вызов метода базового класса
+      this.destroy();
     });
   }
 }

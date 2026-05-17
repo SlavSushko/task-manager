@@ -4,7 +4,6 @@ import './popup.css';
 export class Popup extends BaseComponent {
   constructor(modalId) {
     super({ id: modalId }); 
-    // super.render() привяжет this.element к уже существующему DOM-элементу
     this.render(); 
     this.closeBtn = this.element.querySelector('.popup__close');
     this.overlay = this.element.querySelector('.popup__overlay');

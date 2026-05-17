@@ -14,10 +14,8 @@ export class Notification extends BaseComponent {
     p.textContent = this.message;
     this.element.appendChild(p);
     
-    // Запускаем исчезновение через 3 секунды
     setTimeout(() => {
       this.element.classList.add('notification--closing');
-      // Удаляем из DOM после завершения анимации (0.3s)
       setTimeout(() => this.destroy(), 300);
     }, 3000);
 

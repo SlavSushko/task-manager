@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   let tasks = [];
   let currentFilter = 'all'; 
-  let currentSort = 'default'; // Текущая сортировка
+  let currentSort = 'default';
   let taskPopupInstance = null; 
 
   const notify = (message) => {
@@ -37,25 +37,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   };
 
-  // --- РЕНДЕР, ФИЛЬТРАЦИЯ И СОРТИРОВКА ---
   const renderTasks = () => {
     appContainer.innerHTML = ''; 
 
-    // 1. Фильтрация
     const filteredTasks = tasks.filter(task => {
       if (currentFilter === 'active') return !task.completed;
       if (currentFilter === 'done') return task.completed;
       return true; 
     });
 
-    // 2. Сортировка
     const sortedTasks = [...filteredTasks].sort((a, b) => {
       if (currentSort === 'az') return a.title.localeCompare(b.title);
       if (currentSort === 'done-last') return Number(a.completed) - Number(b.completed);
       return 0; // По умолчанию (как добавили)
     });
 
-    // 3. Отрисовка
     sortedTasks.forEach(taskData => {
       const taskInstance = new Task(
         taskData,
@@ -95,7 +91,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   window.addEventListener('hashchange', handleRouting);
 
-  // Слушатель для селекта сортировки
   sortSelect.addEventListener('change', (e) => {
     currentSort = e.target.value;
     renderTasks();

@@ -6,7 +6,6 @@ export class BaseComponent {
     this.element = null;
   }
 
-  // Полиморфный метод рендера: создает элемент или находит существующий
   render() {
     if (this.id && document.getElementById(this.id)) {
       this.element = document.getElementById(this.id);
@@ -18,7 +17,6 @@ export class BaseComponent {
     return this.element;
   }
 
-  // Метод уничтожения (освобождение памяти и удаление из DOM)
   destroy() {
     if (this.element) {
       this.element.remove();

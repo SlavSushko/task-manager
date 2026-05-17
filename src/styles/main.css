@@ -1,4 +1,3 @@
-/* Подключаем переменные */
 @import './variables.css';
 
 body {
@@ -27,16 +26,14 @@ body {
   gap: 8px;
 }
 
-/* Ссылки-кнопки в навигации */
 .filter-btn {
   text-decoration: none;
 }
 
-/* Состояние активного фильтра/роута */
 .filter-btn_active {
   background: var(--color-primary);
   color: white;
-  pointer-events: none; /* Отключаем клик по уже активной вкладке */
+  pointer-events: none;
 }
 
 .sort-select {
@@ -54,7 +51,6 @@ body {
   border-color: var(--color-primary);
 }
 
-/* Ограничитель по высоте для контента */
 .main-content {
   min-height: calc(100vh - 60px);
 }
@@ -65,7 +61,6 @@ body {
   color: var(--color-text);
 }
 
-/* Кнопки */
 .btn {
   display: inline-flex; 
   align-items: center; 
@@ -91,7 +86,6 @@ body {
 .btn_secondary { background: #e5e7eb; color: #374151; }
 .btn_secondary:hover { background: #d1d5db; }
 
-/* Сетка задач */
 .task-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -109,7 +103,6 @@ body {
   padding: 40px 0;
 }
 
-/* Формы */
 .form { display: flex; flex-direction: column; gap: 16px; }
 .form__group { display: flex; flex-direction: column; gap: 6px; }
 .form__label { font-size: 0.9rem; font-weight: 500; color: var(--color-gray); }
@@ -123,7 +116,6 @@ body {
 .form__input_textarea { resize: vertical; min-height: 80px; }
 .form__submit { align-self: flex-end; }
 
-/* Область уведомлений */
 .notification-area {
   position: fixed;
   bottom: 20px;
@@ -134,7 +126,6 @@ body {
   z-index: 2000;
 }
 
-/* Адаптивность для шапки */
 @media (max-width: 480px) {
   .header__container { flex-direction: column; gap: 10px; }
   

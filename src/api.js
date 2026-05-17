@@ -10,7 +10,6 @@ export const fetchTasks = async () => {
     
     const data = await response.json();
     
-    // Адаптируем данные внешнего API к формату наших компонентов
     return data.map(item => ({
       id: `api-${item.id}`,
       title: item.title,
