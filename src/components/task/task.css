@@ -1,0 +1,47 @@
+.task-card {
+  background: var(--color-card-bg);
+  border-radius: var(--border-radius);
+  border-left: 5px solid var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Анимация появления */
+  animation: cardFadeIn 0.4s ease-out forwards;
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.task-card_completed {
+  border-left-color: var(--color-success);
+  background: var(--color-bg);
+}
+
+.task-card_completed .task-card__title,
+.task-card_completed .task-card__desc {
+  text-decoration: line-through;
+  color: var(--color-gray);
+}
+
+.task-card__title { margin: 0 0 8px 0; font-size: 1.2rem; color: var(--color-text); }
+.task-card__desc { margin: 0; font-size: 0.95rem; color: var(--color-gray); line-height: 1.4; }
+.task-card__actions { margin-top: 15px; display: flex; gap: 8px; justify-content: flex-end; }
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 480px) {
+  .task-card { padding: var(--spacing-sm); min-height: auto; }
+  .task-card__title { font-size: 1.1rem; }
+  .task-card__actions { flex-direction: column; }
+  .task-card__actions .btn { width: 100%; } /* На мобилках кнопки на всю ширину карточки */
+}

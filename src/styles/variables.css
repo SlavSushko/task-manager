@@ -1,0 +1,20 @@
+:root {
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-success: #10b981;
+  --color-success-hover: #059669;
+  --color-danger: #ef4444;
+  --color-danger-hover: #dc2626;
+  --color-bg: #f3f4f6;
+  --color-text: #111827;
+  --color-gray: #6b7280;
+  --color-card-bg: #ffffff;
+  
+  --font-main: 'Inter', system-ui, sans-serif;
+  --border-radius: 12px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+}

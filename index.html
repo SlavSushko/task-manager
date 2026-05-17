@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Tracker Pro</title>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__container">
+      <h1 class="header__title">Task Tracker</h1>
+      
+      <nav class="filter-bar">
+        <a href="#/all" class="btn btn_small btn_secondary filter-btn filter-btn_active" data-filter="all">Все</a>
+        <a href="#/active" class="btn btn_small btn_secondary filter-btn" data-filter="active">Активные</a>
+        <a href="#/done" class="btn btn_small btn_secondary filter-btn" data-filter="done">Выполненные</a>
+        
+        <select id="sort-select" class="sort-select">
+          <option value="default">По умолчанию</option>
+          <option value="az">По названию (А→Я)</option>
+          <option value="done-last">Выполненные в конец</option>
+        </select>
+      </nav>
+
+      <button id="open-modal-btn" class="btn btn_primary header__btn">Новая задача</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div id="app" class="task-grid"></div>
+  </main>
+
+  <div id="task-modal" class="popup popup_hidden">
+    <div class="popup__overlay"></div>
+    <div class="popup__content">
+      <button class="popup__close" id="close-modal-btn" aria-label="Закрыть">&times;</button>
+      <h2 class="popup__title">Создание новой задачи</h2>
+      
+      <form id="task-form" class="form">
+        <div class="form__group">
+          <label for="task-title" class="form__label">Название задачи</label>
+          <input type="text" id="task-title" class="form__input" required placeholder="Например: Сдать курсовую работу">
+        </div>
+        <div class="form__group">
+          <label for="task-desc" class="form__label">Описание</label>
+          <textarea id="task-desc" class="form__input form__input_textarea" placeholder="Что конкретно нужно сделать..."></textarea>
+        </div>
+        <button type="submit" class="btn btn_success form__submit">Добавить задачу</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="notification-container" class="notification-area"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

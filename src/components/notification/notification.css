@@ -1,0 +1,28 @@
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideOut {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(40px); }
+}
+
+.notification {
+  background: var(--color-text);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  animation: slideIn 0.3s ease forwards;
+  min-width: 220px;
+}
+
+.notification--closing {
+  animation: slideOut 0.3s ease forwards;
+}
+
+.notification__text {
+  margin: 0;
+  font-size: 0.9rem;
+}
